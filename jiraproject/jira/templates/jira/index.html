@@ -1,0 +1,70 @@
+
+     <table style="width:100%" >
+  <tr style="border:1px solid black">
+    <th><form method="get" action="/jira/Addcompany">
+    <button name="company" type="submit"> Add company</button></form></th>
+    <th><form method="get" action="/jira/Addproject">
+    <button type="submit"> Addproject</button>
+</form></th>
+    <th><form method="get" action="/jira/userreg">
+    <button type="submit"> Addemployee</button>
+</form></th>
+    <th><form method="get" action="/jira/employee/{{employee.id}}">
+    <button type="submit"> Employee list</button>
+</form> </th>
+      <th ><form method="get" action="/jira/module">
+    <button type="submit"> Add module</button>
+</form></th>
+
+      <th><form method="get" action="/jira/login">
+    <button type="submit"> Login</button>
+</form></th>
+      <th><form method="get" action="/jira/logout">
+    <button type="submit"> Logout</button>
+</form></th>
+  </tr>
+     </table>
+
+<br>
+     <br>
+     <br>
+     <br>
+
+<script> alert ("hey there you are going on jira page u want to continue?");</script>
+
+
+
+     COMPANIES
+
+
+
+
+     <table style="width:100%" >
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black">company name</th>
+    <th style="border:1px solid black">projects</th>
+    <th style="border:1px solid black">update</th>
+    <th style="border:1px solid black"> delete</th>
+  </tr>
+
+         {% for company in company_list %}
+  <tr style="text-align:center">
+    <td style="border:1px solid black"><a href="/jira/{{ company.id }}/">{{ company.company_name }}</a></td>
+    <td style="border:1px solid black"><form method="get" action="/jira/{{ company.id }}/project">
+    <button type="submit"> project details</button>
+</form></td>
+    <td style="border:1px solid black"><form method="get" action="/jira/{{ company.id }}/Update">
+    <button type="submit"> Update company</button>
+</form></td>
+      <td style="border:1px solid black">  <form method="get" action="/jira/{{ company.id }}/delete">
+    <button type="submit"> delete company</button>
+</form></td>
+  </tr>
+    {% endfor %}
+</table>
+
+</ul>
+
+
+
+

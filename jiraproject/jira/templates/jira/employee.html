@@ -1,0 +1,5 @@
+EMPLOYEE LIST
+<ul>{% for employee in employee_list %}
+      <li><a href="/jira/employee/{{ employee.id }}/">{{ employee.emp_name }}</a></li>
+         {% endfor %}
+     </ul>

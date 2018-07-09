@@ -1,0 +1,28 @@
+
+
+
+
+
+
+<table style="width:100%">
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black">module_name</th>
+    <th style="border:1px solid black">Asociated_projet</th>
+    <th style="border:1px solid black">Assigned _to</th>
+      <th style="border:1px solid black">Delete</th>
+      <th style="border:1px solid black">Update</th>
+  </tr>
+    {% for module in object_list %}
+  <tr>
+      <tr style="text-align:center">
+    <td style="border:1px solid black">{{module.Module_name}}</td>
+    <td style="border:1px solid black">{{module.PROJECT}}</td>
+    <td style="border:1px solid black">{{module.Assigned_to}}</td>
+    <td style="border:1px solid black"> <a href="http://127.0.0.1:8000/jira/deletemodule/{{module.id}}/">
+          <button type="submit"> Delete</button></a></td>
+     <td style="border:1px solid black"> <a href="http://127.0.0.1:8000/jira/updatemodule/{{module.id}}/">
+          <button type="submit"> update</button></a></td>
+  </tr>
+
+    {% endfor %}
+</table>

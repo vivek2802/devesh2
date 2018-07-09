@@ -1,0 +1,8 @@
+{% for module in project.modules_set.all %}
+<div style="background-color:lightblue">
+        <a herf="{% url 'jira:detail' company.id %}"> Name of project -{{ project.Project_name }}<br >
+            project start date - {{project.start_date}}<br >
+            Deadline-{{project.deadline_date}}<br >Project code- {{project.project_code}}<br> employees - <li>
+                {{project.Assigned_employee.all}}<li/><br/> teamleader - {{project.teamleader}}</a>
+</div><br >
+{% endfor %}

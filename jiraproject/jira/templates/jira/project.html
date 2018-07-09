@@ -1,0 +1,37 @@
+
+<div style="background-color:lightblue">
+        <a herf="{% url 'jira:detail' company.id %}"> <table style="width:100%" >
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black">Project name</th>
+    <th style="border:1px solid black">start date</th>
+    <th style="border:1px solid black">deadline date</th>
+    <th style="border:1px solid black"> project code</th>
+      <th style="border:1px solid black"> project modules</th>
+      <th style="border:1px solid black"> assigned employees</th>
+    <th style="border:1px solid black"> Delete project</th>
+    <th style="border:1px solid black"> update project</th>
+
+  </tr>
+            {% for project in company.project_set.all %}
+  <tr style="text-align:center">
+    <td style="border:1px solid black">{{project.Project_name}}</td>
+    <td style="border:1px solid black">{{project.start_date}}</td>
+    <td style="border:1px solid black">{{project.deadline_date}}</td>
+    <td style="border:1px solid black">{{project.project_code}}</td>
+      <td style="border:1px solid black"> <a href="http://127.0.0.1:8000/jira/{{project.id}}/modules">
+          <button type="submit"> modules</button></a></td>
+    <td style="border:1px solid black">{{project.Assigned_employee}}</td>
+    <td style="border:1px solid black"> <a href="http://127.0.0.1:8000/jira/delete/{{project.id}}/">
+          <button type="submit"> delete</button></a></td>
+    <td style="border:1px solid black"> <a href="http://127.0.0.1:8000/jira/update/{{project.id}}/">
+          <button type="submit"> update</button></a></td>
+
+
+  </tr>
+            {% endfor %}
+
+</table>
+
+        </a></div>
+
+
